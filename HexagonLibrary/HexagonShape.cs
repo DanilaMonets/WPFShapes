@@ -59,7 +59,7 @@
         public HexagonShape(string name, List<Point> pointList, bool isChose = false)
         {
             Name = name;
-            IsChoosen = isChoosen;
+            IsChoosen = isChose;
             PointList = new List<Point>();
             foreach (var item in pointList)
             {
