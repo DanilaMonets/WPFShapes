@@ -5,8 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFShapes"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Background="LightGray"
+        ResizeMode="NoResize"
+        Title="Shapes Drawing" Height="400" Width="620">
     <Grid>
         
+
     </Grid>
 </Window>
