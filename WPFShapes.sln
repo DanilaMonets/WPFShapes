@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFShapes", "WPFShapes\WPFS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexagonLibrary", "HexagonLibrary\HexagonLibrary.csproj", "{EB31B9F9-D12F-4080-95B2-814289103BEC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic", "Logic\Logic.csproj", "{580D020C-9DB2-4012-877A-382907353ED0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{EB31B9F9-D12F-4080-95B2-814289103BEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB31B9F9-D12F-4080-95B2-814289103BEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB31B9F9-D12F-4080-95B2-814289103BEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{580D020C-9DB2-4012-877A-382907353ED0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{580D020C-9DB2-4012-877A-382907353ED0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{580D020C-9DB2-4012-877A-382907353ED0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{580D020C-9DB2-4012-877A-382907353ED0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
