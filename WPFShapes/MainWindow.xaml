@@ -9,7 +9,39 @@
         ResizeMode="NoResize"
         Title="Shapes Drawing" Height="400" Width="620">
     <Grid>
-        
+        <Menu HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="617">
+            <MenuItem Header="File" VerticalAlignment="Top">
+                <MenuItem HorizontalAlignment="Left"  Command="New"/>
+                <MenuItem HorizontalAlignment="Left"  Command="Open"/>
+                <MenuItem HorizontalAlignment="Left"  Command="Save"/>
+                <MenuItem HorizontalAlignment="Left"  Command="SaveAs"/>
+                <MenuItem HorizontalAlignment="Left" Command="Close" />
+            </MenuItem>
+            <MenuItem Name="ShapesListMenu" Header="Shapes" VerticalAlignment="Top">
+                <MenuItem.ItemContainerStyle>
+                    <Style TargetType="MenuItem">
+                        <Setter Property="MenuItem.Header" Value="{Binding Name, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <EventSetter Event="Click" Handler="MenuItem_Shapes_Click"/>
+                    </Style>
+                </MenuItem.ItemContainerStyle>
+            </MenuItem>
+            <MenuItem Header="Color" VerticalAlignment="Top" Click="colorClick"/>
+            <MenuItem Header="Hexagon" Click="Hexagon_click"/>
+
+        </Menu>
+        <Canvas Name="shapeCanvas" Height="330" Background="White" Width="590" MouseDown="Canvas_MouseDown" Margin="10,31,14,10">
+            <Canvas.ContextMenu>
+                <ContextMenu Name="ContextMenuItems" >
+                    <ContextMenu.ItemContainerStyle>
+                        <Style TargetType="MenuItem">
+                            <Setter Property="MenuItem.Header" Value="{Binding Name}"/>
+                            <EventSetter Event="Click" Handler="MenuItem_Shapes_Click"/>
+                        </Style>
+                    </ContextMenu.ItemContainerStyle>
+                </ContextMenu>
+            </Canvas.ContextMenu>
+        </Canvas>
+
 
     </Grid>
 </Window>

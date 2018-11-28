@@ -9,12 +9,12 @@ using System.Collections.ObjectModel;
 using System.Xml.Serialization;
 using System.IO;
 
-namespace Logic
+namespace LogicLibrary
 {
     /// <summary>
     /// Class contains methods to create and manipulate a shape, logic
     /// </summary>
-    class Logic
+    public class Logic
     {
         public Point marginShape;
         public Point startMovePoint;
@@ -39,15 +39,19 @@ namespace Logic
         }
 
         /// <summary>
-        /// Creates a Polygon
+        /// Creates a hexagon
         /// </summary>
         /// <param name="act"></param>
-        public void createAndDrawHexagon(Action act)
+        public void createAndDrawHexagon(Action act, Color? color = null)
         {
             List<Point> points = getPoints();
-            if (Math.Sqrt(Math.Pow(points[0].X - points[points.Count - 1].X, 2) + Math.Pow(points[0].Y - points[points.Count - 1].Y, 2)) <= 10 && points.Count == 6)
+            if (points.Count == 6)
             {
-                hexagon = new HexagonShape(generateName("Polygon"), points);
+                hexagon = new HexagonShape(generateName("Hexagon"), points);
+                if (color != null)
+                {
+                    hexagon.Color = (Color)color;
+                }
                 hexagonCollection.Add(hexagon);
                 act();
                 removeAllPoint();

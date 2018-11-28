@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Windows.Shapes;
 
-namespace Logic
+namespace LogicLibrary
 {
     /// <summary>
     /// Collection of points
