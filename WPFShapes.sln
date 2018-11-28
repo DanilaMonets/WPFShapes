@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexagonLibrary", "HexagonLi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic", "Logic\Logic.csproj", "{580D020C-9DB2-4012-877A-382907353ED0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serialization", "Serialization\Serialization.csproj", "{3B0D599A-C986-4C44-BF2B-4C6B1D28F2F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{580D020C-9DB2-4012-877A-382907353ED0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{580D020C-9DB2-4012-877A-382907353ED0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{580D020C-9DB2-4012-877A-382907353ED0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B0D599A-C986-4C44-BF2B-4C6B1D28F2F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B0D599A-C986-4C44-BF2B-4C6B1D28F2F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B0D599A-C986-4C44-BF2B-4C6B1D28F2F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B0D599A-C986-4C44-BF2B-4C6B1D28F2F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
