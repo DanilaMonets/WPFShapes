@@ -53,7 +53,7 @@ namespace HexagonLibrary
         }
 
         /// <summary>
-        /// IsChoosen property
+        /// IsChosen property
         /// </summary>
         public bool IsChoosen
         {

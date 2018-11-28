@@ -11,7 +11,7 @@ namespace LogicLibrary
         public static List<Ellipse> collection;
 
         /// <summary>
-        /// Out constructor without any paramethers
+        /// Initializes static members of the <see cref="PointEllipseCollection" /> class.
         /// </summary>
         static PointEllipseCollection()
         {

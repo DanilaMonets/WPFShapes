@@ -1,4 +1,4 @@
-﻿//  <copyright file="PointCollection.cs" company="NIP">
+﻿//  <copyright file="MyPointCollection" company="NIP">
 //  Copyright © 2018. All rights reserved.
 //  </copyright>
 //  <author>Danylo Monets</author>
@@ -20,6 +20,7 @@ namespace LogicLibrary
         {
             collection = new List<Point>();
         }
+
         public static void addPoint(Point p)
         {
             collection.Add(p);

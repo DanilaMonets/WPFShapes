@@ -1,6 +1,4 @@
-﻿
-
-namespace Serialization
+﻿namespace Serialization
 {
     using System;
     using System.Collections.ObjectModel;

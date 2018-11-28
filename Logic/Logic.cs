@@ -27,11 +27,13 @@ namespace LogicLibrary
         public Point startMovePoint;
 
         public HexagonShape hexagon { get; set; }
+
         public ObservableCollection<HexagonShape> hexagonCollection
         {
             get;
             set;
         }
+
         public static int counter;
         public int ChosenIndex { get; set; } = -1;
 
@@ -39,6 +41,7 @@ namespace LogicLibrary
         {
             counter = 1;
         }
+
         public Logic()
         {
             hexagon = new HexagonShape();
