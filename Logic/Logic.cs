@@ -1,16 +1,23 @@
-﻿using HexagonLibrary;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Windows;
-using System.Windows.Shapes;
-using System.Windows.Media;
-using System.Collections.ObjectModel;
-using System.Xml.Serialization;
-using System.IO;
+﻿//  <copyright file="Logic.cs" company="NIP">
+//  Copyright © 2018. All rights reserved.
+//  </copyright>
+//  <author>Danylo Monets</author>
+//  <date>09/15/2018 05:09:42 PM </date>
+//  <summary>Class representing a Logic of our program</summary>
 
 namespace LogicLibrary
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Windows;
+    using System.Windows.Shapes;
+    using System.Windows.Media;
+    using System.Collections.ObjectModel;
+    using System.Xml.Serialization;
+    using System.IO;
+    using HexagonLibrary;
+
     /// <summary>
     /// Class contains methods to create and manipulate a shape, logic
     /// </summary>
@@ -66,97 +73,120 @@ namespace LogicLibrary
         {
             return s + counter++.ToString();
         }
+
+        /// <summary>
+        /// Get points
+        /// </summary>
+        /// <returns>List of points</returns>
         public List<Point> getPoints()
         {
             return new List<Point>(MyPointCollection.collection);
         }
+
+        /// <summary>
+        /// Remove all points
+        /// </summary>
         public void removeAllPoint()
         {
             MyPointCollection.collection.RemoveAll(a => a is Point);
         }
 
-        public Polygon createNewHexagon()
+        /// <summary>
+        /// createNewHexagon() method
+        /// </summary>
+        /// <returns>returns Polygon</returns>
+        public Polygon CreateNewHexagon()
         {
             Polygon h = new Polygon();
-            foreach (var item in hexagon.PointList)
+            foreach (var item in this.hexagon.PointList)
             {
                 h.Points.Add(item);
             }
+
             h.Stroke = Brushes.Black;
-            h.Fill = new SolidColorBrush(hexagon.Color);
-            h.Margin = new Thickness(hexagon.Margin.X, hexagon.Margin.Y, 0, 0);
+            h.Fill = new SolidColorBrush(this.hexagon.Color);
+            h.Margin = new Thickness(this.hexagon.Margin.X, this.hexagon.Margin.Y, 0, 0);
             return h;
         }
 
         /// <summary>
-        /// Unchooses shape
+        /// Unchoose shape
         /// </summary>
         public void UnchooseShape()
         {
-            if (ChosenIndex != -1)
-                hexagonCollection[ChosenIndex].IsChoosen = false;
-
+            if (this.ChosenIndex != -1)
+            {
+                this.hexagonCollection[this.ChosenIndex].IsChoosen = false;
+            }
         }
+        
         /// <summary>
         /// Chooses shape
         /// </summary>
         /// <param name="s">Shape name</param>
         public void ChooseShape(string s)
         {
-            ClearChoose();
-            ChosenIndex = hexagonCollection.IndexOf(hexagonCollection.Where(a => a.Name == s).First());
-            hexagonCollection[ChosenIndex].IsChoosen = true;
+            this.ClearChoose();
+            this.ChosenIndex = this.hexagonCollection.IndexOf(this.hexagonCollection.Where(a => a.Name == s).First());
+            this.hexagonCollection[this.ChosenIndex].IsChoosen = true;
         }
+
         /// <summary>
-        /// Unchooses everything
+        /// Unchoose everything
         /// </summary>
         public void ClearChoose()
         {
-            foreach (var item in hexagonCollection)
+            foreach (var item in this.hexagonCollection)
             {
                 item.IsChoosen = false;
             }
         }
+
         /// <summary>
         /// Sets margin and start point
         /// </summary>
-        /// <param name="startMovePoint"></param>
+        /// <param name="startMovePoint">First variable</param>
         public void SetShapeMarginAndStartMovePoint(Point startMovePoint)
         {
-            marginShape = hexagonCollection[ChosenIndex].Margin;
+            this.marginShape = this.hexagonCollection[this.ChosenIndex].Margin;
             this.startMovePoint = startMovePoint;
         }
+
         /// <summary>
         /// Moves shape
         /// </summary>
         /// <param name="mousePoint">Mouse point</param>
         public void MoveShape(Point mousePoint)
         {
-            Point newMarginPoint = new Point(mousePoint.X - startMovePoint.X + marginShape.X, mousePoint.Y - startMovePoint.Y + marginShape.Y);
-            hexagonCollection[ChosenIndex].Margin = newMarginPoint;
+            Point newMarginPoint = new Point(mousePoint.X - this.startMovePoint.X + this.marginShape.X, mousePoint.Y - this.startMovePoint.Y + this.marginShape.Y);
+            this.hexagonCollection[this.ChosenIndex].Margin = newMarginPoint;
         }
+
         /// <summary>
         /// Chooses color
         /// </summary>
-        /// <param name="color">Color</param>   
+        /// <param name="color">Color of hexagon</param>   
         public void setColor(Color color)
         {
             if (color != Color.FromRgb(255, 255, 255))
             {
-                if (ChosenIndex != -1)
-                    hexagonCollection[ChosenIndex].Color = color;
+                if (this.ChosenIndex != -1)
+                {
+                    this.hexagonCollection[this.ChosenIndex].Color = color;
+                }
             }
         }
+
         /// <summary>
         /// Saves object as xml document
         /// </summary>
-        /// <param name="path">Color</param>   
+        /// <param name="path">Path to file</param>   
         public void saveShapes(string path)
         {
-            XmlSerializer xmlSerializer = new XmlSerializer(hexagonCollection.GetType(), new Type[] { typeof(HexagonShape) });
+            XmlSerializer xmlSerializer = new XmlSerializer(this.hexagonCollection.GetType(), new Type[] { typeof(HexagonShape) });
             using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate, FileAccess.ReadWrite))
             {
-                xmlSerializer.Serialize(fs, hexagonCollection);
+                xmlSerializer.Serialize(fs, this.hexagonCollection);
             }
         }
     }

@@ -1,4 +1,11 @@
-﻿namespace HexagonLibrary
+﻿//  <copyright file="HexagonShape.cs" company="NIP">
+//  Copyright © 2018. All rights reserved.
+//  </copyright>
+//  <author>Vasyl Salabay</author>
+//  <date>09/15/2018 05:09:42 PM </date>
+//  <summary>Class representing a hexagon</summary>
+
+namespace HexagonLibrary
 {
     using System;
     using System.Collections.Generic;
@@ -7,34 +14,47 @@
     using System.Windows;
     using System.Windows.Media;
 
+    /// <summary>
+    /// Class represent hexagon
+    /// </summary>
     public class HexagonShape : INotifyPropertyChanged
     {
         /// <summary>
-        /// Class for polygon shape
+        /// IsChoose field
         /// </summary>
-        bool isChoosen;
-        Color color = Color.FromArgb(0, 255, 255, 255);
-        Point margin;
+        private bool isChoosen;
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        /// <summary>
+        /// Color field
+        /// </summary>
+        private Color color = Color.FromArgb(0, 255, 255, 255);
 
-        protected void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        /// <summary>
+        /// Margin field
+        /// </summary>
+        private Point margin;
 
+        /// <summary>
+        /// Point list
+        /// </summary>
         public List<Point> PointList
         {
             get;
             set;
         }
 
+        /// <summary>
+        /// Name property
+        /// </summary>
         public string Name
         {
             get;
             set;
         }
 
+        /// <summary>
+        /// IsChoosen property
+        /// </summary>
         public bool IsChoosen
         {
             get
@@ -50,6 +70,20 @@
                     NotifyPropertyChanged();
                 }
             }
+        }
+
+        /// <summary>
+        /// PropertyChangedEventHandler event
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// NotifyPropertyChanges method
+        /// </summary>
+        /// <param name="propertyName">Property name</param>
+        protected void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
+        {
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         public HexagonShape()

@@ -136,7 +136,7 @@ namespace WPFShapes
         {
             foreach (var item in PointEllipseCollection.collection)
                 shapeCanvas.Children.Remove(item);
-            shapeCanvas.Children.Add(logic.createNewHexagon());
+            shapeCanvas.Children.Add(logic.CreateNewHexagon());
             PointEllipseCollection.collection.RemoveAll(a => a is Ellipse);
         }
 

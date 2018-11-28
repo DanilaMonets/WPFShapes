@@ -48,7 +48,7 @@ namespace UnitTests
             logic.hexagon.PointList.Add(new Point(5, -5));
             logic.hexagon.PointList.Add(new Point(10, -10));
             logic.hexagon.PointList.Add(new Point(20, -20));
-            Polygon p = logic.createNewHexagon();
+            Polygon p = logic.CreateNewHexagon();
 
             Assert.AreEqual(p.Points[0].X, 5);
         }
