@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Background="LightGray"
         ResizeMode="NoResize"
-        Title="Shapes Drawing" Height="400" Width="620">
+        Title="Shapes Drawing" Height="400" Width="700">
     <Grid>
-        <Menu HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="617">
+        <Menu HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="690">
             <MenuItem Header="File" VerticalAlignment="Top">
                 <MenuItem HorizontalAlignment="Left"  Command="New"/>
                 <MenuItem HorizontalAlignment="Left"  Command="Open"/>
@@ -29,7 +29,7 @@
             <MenuItem Header="Hexagon" Click="Hexagon_click"/>
 
         </Menu>
-        <Canvas Name="shapeCanvas" Height="330" Background="White" Width="590" MouseDown="Canvas_MouseDown" Margin="10,31,14,10">
+        <Canvas Name="shapeCanvas" Height="330" Background="White" Width="640" MouseDown="Canvas_MouseDown" Margin="10,31,14,10">
             <Canvas.ContextMenu>
                 <ContextMenu Name="ContextMenuItems" >
                     <ContextMenu.ItemContainerStyle>
